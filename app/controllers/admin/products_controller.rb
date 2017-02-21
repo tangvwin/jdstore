@@ -9,7 +9,7 @@ class Admin::ProductsController < ApplicationController
         @products = Product.all
       end
 
-
+      
 
       def new
         @product = Product.new
@@ -41,6 +41,15 @@ class Admin::ProductsController < ApplicationController
            render :new
          end
        end
+
+       def destroy
+         @product = Product.find(params[:id])
+         @product.destroy
+        redirect_to admin_products_path,alert: 'Group delete'
+
+      end
+
+
 
        private
 
