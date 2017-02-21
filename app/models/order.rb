@@ -14,6 +14,8 @@ before_create :generate_token
     end
 
 
+
+
   belongs_to  :user
   has_many :product_lists
 
