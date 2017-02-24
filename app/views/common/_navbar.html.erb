@@ -1,46 +1,75 @@
-<nav class="navbar navbar-default" role="navigation">
+
+
+
+
+
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">Jdstore</a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">美丽说</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active">
-          <%= link_to("Products", products_path) %>
+        <li class="default">
+          <%= link_to("产品主页", products_path) %>
+        </li>
+        <li><a href="#">超值优惠</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">全部分类 <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">美妆个护</a></li>
+            <li><a href="#">家居日用</a></li>
+            <li><a href="#">保健护理</a></li>
+            <li class="divider"></li>
+            <li><a href="#">服饰鞋包</a></li>
+            <li class="divider"></li>
+            <li><a href="#">家电数码</a></li>
+          </ul>
         </li>
       </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="口红">
+        </div>
+        <button type="submit" class="btn btn-default">搜索</button>
+      </form>
       <ul class="nav navbar-nav navbar-right">
-
-       <li>
-         <%= link_to carts_path do %>
-           购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
-            <% end %>
-          </li>
-
-        <% if !current_user %>
-        <li><%= link_to("注册", new_user_registration_path )%></li>
-<li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
-        <% else %>
-        <li class="dropdown">
-          <a href="#" class="dropdown_toggle" data-toggle="dropdown">
-            Hi!,<%= current_user.email%>
-            <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu">
-            <% if current_user.admin? %>
-               <li>
-                 <%= link_to("Admin 选单", admin_products_path ) %>
-               </li>
+        <li>
+          <%= link_to carts_path do %>
+            购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
              <% end %>
-             <li>
-               <%= link_to("个人订单列表", account_orders_path ) %>
-             </li>
-             <li>
-<li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
-    </ul>
-      </li>
-      <% end %>
+           </li>
+
+         <% if !current_user %>
+         <li><%= link_to("注册", new_user_registration_path )%></li>
+ <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+         <% else %>
+         <li class="dropdown">
+           <a href="#" class="dropdown_toggle" data-toggle="dropdown">
+             Hi!,<%= current_user.email%>
+             <b class="caret"></b>
+           </a>
+           <ul class="dropdown-menu">
+             <% if current_user.admin? %>
+                <li>
+                  <%= link_to("Admin 选单", admin_products_path ) %>
+                </li>
+              <% end %>
+              <li>
+                <%= link_to("个人订单列表", account_orders_path ) %>
+              </li>
+              <li>
+ <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+     </ul>
+       </li>
+       <% end %>
       </ul>
     </div>
   </div>

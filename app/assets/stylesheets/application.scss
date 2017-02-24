@@ -17,3 +17,67 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+
+.navbar {
+    margin-bottom: 0;
+    background-color: #be1174;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: white !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #be1174 !important;
+    background-color: white !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: yellow !important;
+}
+
+.nav .open  a, .nav .open  a:hover, .nav .open  a:focus {
+    background-color: #be1174;
+    border-color: #2fa4e7;
+}
+
+.navbar .navbar-nav  li  a, .navbar-brand {
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.jumbotron {
+  background-image:url('http://image5.tuku.cn/pic/wallpaper/meinv/jiarenmeizhuangmeitanggirlbizhi/022.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 110px;
+}
+
+.title {
+  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
+  text-align: left;
+  margin-top: 200px;
+  margin-bottom: 80px;
+
+}
+
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: left;
+  color: black;
+  top: 12px;
+}
+
+.lead {
+  margin-bottom: 60px;
+  text-align: left;
+  color: black;
+}
