@@ -14,15 +14,18 @@ Rails.application.routes.draw do
       end
     end
 
-
+    resources :products do
+        collection do
+          get :search
+        end
+      end
 
    resources :products do
      member do
        post :add_to_cart
-       put "like", to: "products#upvote"
-       put "dislike", to: "products#downvote"
      end
    end
+
 
   resources :carts do
     collection do
