@@ -41,6 +41,8 @@ gem 'aasm'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'ransack'
+gem 'seo_helper'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
