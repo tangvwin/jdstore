@@ -23,4 +23,8 @@ resources :carts do
  end
 
 
+   resources :cart_items
+   
+
+
 end
