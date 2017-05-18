@@ -31,6 +31,7 @@ resources :carts do
 
    resources :cart_items
 
+   resources :orders
 
 
 end
