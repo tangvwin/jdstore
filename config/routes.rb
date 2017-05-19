@@ -33,5 +33,9 @@ resources :carts do
 
    resources :orders
 
+   namespace :account do
+     resources :orders
+   end
+
 
 end
