@@ -1,6 +1,7 @@
 <h2>订单列表</h2>
 
 <table class="table table-bordered">
+
   <thead>
     <tr>
       <th>#</th>
@@ -11,12 +12,12 @@
   </thead>
 
   <tbody>
-    <%= @orders.each do |order| %>
+    <% @orders.each do |order| %>
     <tr>
-      <th><%= link_to(order.id, admin_order_path(order))%></th>
-      <th><%= order.created_at.to_s(:long)%></th>
-      <th><%= order.user.email %></th>
-      <th><%= order.aasm_state %></th>
+      <td><%= link_to(order.id, admin_order_path(order) )%></td>
+      <td><%= order.created_at.to_s(:long)%></td>
+      <td><%= order.user.email %></td>
+      <td><%= order.aasm_state %></td>
     </tr>
     <% end %>
 
