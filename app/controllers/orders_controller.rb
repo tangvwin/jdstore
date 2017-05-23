@@ -56,11 +56,11 @@ def pay_with_creditcard
 end
 
 def apply_to_cancel
-  @order = Order.find_by_token(params[:id])
-  OrderMailer.apply_cancel(@order).deliver!
-  flash[:notice] = "已提交申请"
-  redirect_to :back
-end
+    @order = Order.find_by_token(params[:id])
+    OrderMailer.apply_cancel(@order).deliver!
+    flash[:notice] = "已提交申请"
+    redirect_to :back
+  end
 
 
 
