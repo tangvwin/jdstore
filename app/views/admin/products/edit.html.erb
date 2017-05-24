@@ -16,6 +16,12 @@
     <%= f.input :price %>
   </div>
 
+
+  <div class="group">
+    <%= f.input :discount,:label => "Discount % (eg. $100 x 80% = $80)" %>
+  </div>
+
+
   <% if @product.image.present? %>
   <span>目前商品图</span>
   <%= image_tag(@product.image.thumb.url)%>
