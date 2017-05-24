@@ -13,7 +13,7 @@ u.is_admin = true
 u.save
 
 
-puts '建立6个Products'
+puts '建立5个Products'
 Product.create!(title: '华为 HUAWEI P10',
 description: '华为 HUAWEI P10 全网通 4GB+64GB 草木绿 移动联通电信4G手机 双卡双待',
 quantity: '200',
@@ -44,8 +44,8 @@ quantity: '50',
 price: '6699',
 image: open("http://om2fym5z4.bkt.clouddn.com/iphone7plus.jpg"))
 
-Product.create!(title: '小米MIX 全网通 标准版',
-description: '小米MIX 全网通 标准版 4GB内存 128GB ROM 皓月白 移动联通电信4G手机',
-quantity: '110',
-price: '3499',
-image: open("https://img11.360buyimg.com/mobilecms/s500x500_jfs/t4264/215/455518113/309855/38fe41f1/58b4fc81N1d924112.jpg!q70.jpg"))
+# Product.create!(title: '小米MIX 全网通 标准版',
+# description: '小米MIX 全网通 标准版 4GB内存 128GB ROM 皓月白 移动联通电信4G手机',
+# quantity: '110',
+# price: '3499',
+# image: open("https://img11.360buyimg.com/mobilecms/s500x500_jfs/t4264/215/455518113/309855/38fe41f1/58b4fc81N1d924112.jpg!q70.jpg"))
