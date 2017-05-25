@@ -30,9 +30,9 @@
 
         <td><%= product.title %></td>
         <td><%= product.price %></td>
-        <td><%= link_to("Edit", edit_admin_product_path(product))%>
-            <%= link_to("向上",move_up_admin_product_path(product), method: :patch )%>
-            <%= link_to("向下",move_down_admin_product_path(product),method: :patch )%>
+        <td class="text-center"><%= link_to("Edit", edit_admin_product_path(product),class: "fa fa-pencil btn  btn-success")%>
+            <%= link_to("",move_up_admin_product_path(product), method: :patch, class:"fa fa-arrow-up btn btn-xs btn-info" )%>
+            <%= link_to("",move_down_admin_product_path(product),method: :patch , class:"fa fa-arrow-down btn btn-xs btn-info" )%>
 
         </td>
 
