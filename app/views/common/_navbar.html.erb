@@ -12,7 +12,10 @@
         <li class="active">
           <%= link_to("Products", products_path) %>
         </li>
+
       </ul>
+      <%= render :partial => "products/search_bar" %>
+
       <ul class="nav navbar-nav navbar-right">
         <li>
           <%= link_to carts_path do %>

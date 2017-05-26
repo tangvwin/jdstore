@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       end
     end
     resources :products do
+
       member do
         patch :move_up
         patch :move_down
@@ -23,6 +24,9 @@ Rails.application.routes.draw do
 
 
   resources :products do
+    collection do
+      get :search
+    end
     member do
       post :add_to_cart
     end

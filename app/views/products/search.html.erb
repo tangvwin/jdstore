@@ -1,0 +1,11 @@
+<%= render :partial => "products/search_bar" %>
+<div class="search-result">
+  <table class="table table-borderd">
+
+       <% @products.each do |product| %>
+       <br>
+          <%= link_to(product.title,product_path(product)) %>
+             <hr>
+               <% end %>
+             </table>
+           </div>

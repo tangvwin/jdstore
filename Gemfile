@@ -45,6 +45,8 @@ gem 'qiniu-rs'
 gem 'figaro'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
+gem 'ransack'
+gem 'seo_helper','~>1.0'
 
 
 group :development, :test do
