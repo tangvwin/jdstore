@@ -1,19 +1,23 @@
-<div class="row">
-  <div class="col-md-6">
-    <% if @product.image.present? %>
-      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-    <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-    <% end %>
-  </div>
-  <div class="col-md-6">
-    <h2> <%= @product.title %> </h2>
-    <div style="height:100px;">
-      <p>
-        <%= @product.description %>
-      </p>
-    </div>
-          <!-- 如果有折扣 -->
+<html>
+
+
+
+<body>
+
+
+    <div class="container">
+        <div class="row product">
+          <div class="col-md-5 col-md-offset-0">
+              <% if @product.image.present? %>
+                <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            </div>
+             <div class="col-md-7">
+                <h2><%= @product.title %></h2>
+
+        <h3>        <!-- 如果有折扣 -->
       <% if @product.discount.present? && @product.quantity > 0 %>
         <!--  顯示折扣％ -->
         <%= @product.discount %>% off
@@ -26,14 +30,42 @@
         <div class="product-price"> ￥ <%= @product.price %> </div>
      <% end %>
         <br>
-        <div> 数量 : <%= @product.quantity %> </div>
-    <div class="pull-right">
+        <div> 数量 : <%= @product.quantity %> </div></h3>
+        <div >
        <% if @product.quantity.present? && @product.quantity > 0 %>
-      <%= link_to("加入购物车", add_to_cart_product_path(@product),:method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+      <%= link_to("加入购物车", add_to_cart_product_path(@product),:method => :post, :class => "btn btn-danger ") %>
          <% else %>
          已经销售一空，无法购买
          <% end %>
 
+       </div>
+            </div>
+        </div>
+
+    <div class="page-header">
+            <h3>Product Details</h3></div>
+        <p><%= @product.description %> </p>
+
+        <div class="page-header">
+            <h3>Reviews<button class="btn btn-primary write-review" type="button">Write a review</button></h3></div>
+        <div class="media">
+            <div class="media-body">
+                <h4 class="media-heading">Love this!</h4>
+                <div><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus nisl ac diam feugiat, non vestibulum libero posuere. Vivamus pharetra leo non nulla egestas, nec malesuada orci finibus. </p>
+                <p><span class="reviewer-name"><strong>John Doe</strong></span><span class="review-date">7 Oct 2015</span></p>
+            </div>
+        </div>
+        <div class="media">
+            <div class="media-body">
+                <h4 class="media-heading">Fantastic product</h4>
+                <div><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus nisl ac diam feugiat, non vestibulum libero posuere. Vivamus pharetra leo non nulla egestas, nec malesuada orci finibus. </p>
+                <p><span class="reviewer-name"><strong>Jane Doe</strong></span><span class="review-date">7 Oct 2015</span></p>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+
+</body>
+
+</html>
