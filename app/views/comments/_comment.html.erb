@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+
+<div class="comments_wrapper clearfix">
+		<div class="pull-left">
+			<p class="lead"><%= comment.body %></p>
+			<p><small>Submitted <strong><%= time_ago_in_words(comment.created_at) %> ago</strong> by <%= comment.user.email %></small></p>
+		</div>
+
+
+    	<div>
+		<% if comment.user == current_user -%>
+			<%= link_to 'Delete', product_comment_path(@product, comment), method: :delete, class: "pull-right btn btn-danger",data: { confirm: 'Are you sure to delete?' }%>
+		<% end %>
+	</div>
+</div>
+</div>
+<hr>
+</div>
