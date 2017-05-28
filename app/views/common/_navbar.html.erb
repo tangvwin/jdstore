@@ -15,9 +15,10 @@
 
       </ul>
 
-      <div class="searchbar pull-left">
-      <%= render :partial => "products/search_bar" %>
-    </div>
+      <%= form_tag(search_products_path, method: 'get', class: 'navbar-form navbar-left') do %>
+                   <%= search_field_tag 'q', nil, class: 'form-control', placeholder: 'Search...'  %>
+                   <%= submit_tag "搜索", class: 'btn btn-info', :name => nil %>
+                 <% end %>
 
 
       <ul class="nav navbar-nav navbar-right">
