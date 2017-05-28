@@ -23,11 +23,229 @@ body {
      font-family: 'Noto Sans SC', sans-serif;            // google思源黑简作为主字体
      color: #666;                                        // 修改全站的字体主色 压低亮度
      }
-
+     html { height: 100%;}
+       body { min-height: 100%; display: flex; flex-direction: column;}
+       .content { flex: 1;}
 
 
 .searchbar {
   width :500px;
   height :30px;
-  padding: 8px;
 }
+
+
+/*******footer*******/
+html { height: 100%;}
+  body { min-height: 100%; display: flex; flex-direction: column;}
+  .content { flex: 1;}
+
+
+
+  .footer-distributed{
+  	background-color: #292c2f;
+  	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  	box-sizing: border-box;
+  	width: 100%;
+  	text-align: left;
+  	font: bold 16px sans-serif;
+
+  	padding: 55px 50px;
+  	margin-top: 80px;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+  	display: inline-block;
+  	vertical-align: top;
+  }
+
+  /* Footer left */
+
+  .footer-distributed .footer-left{
+  	width: 40%;
+  }
+
+  /* The company logo */
+
+  .footer-distributed h3{
+  	color:  #ffffff;
+  	font: normal 36px 'Cookie', cursive;
+  	margin: 0;
+  }
+
+  .footer-distributed h3 span{
+  	color:  #5383d3;
+  }
+
+  /* Footer links */
+
+  .footer-distributed .footer-links{
+  	color:  #ffffff;
+  	margin: 20px 0 12px;
+  	padding: 0;
+  }
+
+  .footer-distributed .footer-links a{
+  	display:inline-block;
+  	line-height: 1.8;
+  	text-decoration: none;
+  	color:  inherit;
+  }
+
+  .footer-distributed .footer-company-name{
+  	color:  #8f9296;
+  	font-size: 14px;
+  	font-weight: normal;
+  	margin: 0;
+  }
+
+  /* Footer Center */
+
+  .footer-distributed .footer-center{
+  	width: 35%;
+  }
+
+  .footer-distributed .footer-center i{
+  	background-color:  #33383b;
+  	color: #ffffff;
+  	font-size: 25px;
+  	width: 38px;
+  	height: 38px;
+  	border-radius: 50%;
+  	text-align: center;
+  	line-height: 42px;
+  	margin: 10px 15px;
+  	vertical-align: middle;
+  }
+
+  .footer-distributed .footer-center i.fa-envelope{
+  	font-size: 17px;
+  	line-height: 38px;
+  }
+
+  .footer-distributed .footer-center p{
+  	display: inline-block;
+  	color: #ffffff;
+  	vertical-align: middle;
+  	margin:0;
+  }
+
+  .footer-distributed .footer-center p span{
+  	display:block;
+  	font-weight: normal;
+  	font-size:14px;
+  	line-height:2;
+  }
+
+  .footer-distributed .footer-center p a{
+  	color:  #5383d3;
+  	text-decoration: none;;
+  }
+
+
+  /* Footer Right */
+
+  .footer-distributed .footer-right{
+  	width: 20%;
+  }
+
+  .footer-distributed .footer-company-about{
+  	line-height: 20px;
+  	color:  #92999f;
+  	font-size: 13px;
+  	font-weight: normal;
+  	margin: 0;
+  }
+
+  .footer-distributed .footer-company-about span{
+  	display: block;
+  	color:  #ffffff;
+  	font-size: 14px;
+  	font-weight: bold;
+  	margin-bottom: 20px;
+  }
+
+  .footer-distributed .footer-icons{
+  	margin-top: 25px;
+  }
+
+  .footer-distributed .footer-icons a{
+  	display: inline-block;
+  	width: 35px;
+  	height: 35px;
+  	cursor: pointer;
+  	background-color:  #33383b;
+  	border-radius: 2px;
+
+  	font-size: 20px;
+  	color: #ffffff;
+  	text-align: center;
+  	line-height: 35px;
+
+  	margin-right: 3px;
+  	margin-bottom: 5px;
+  }
+
+  /* If you don't want the footer to be responsive, remove these media queries */
+
+
+/*************product index*******/
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&subset=latin-ext,vietnamese');
+body{font-family: 'Quicksand', sans-serif;}
+   h4{
+    	font-weight: 600;
+	}
+	p{
+		font-size: 12px;
+		margin-top: 5px;
+	}
+	.price{
+		font-size: 30px;
+    	margin: 0 auto;
+    	color: #333;
+	}
+
+	.thumbnail{
+		opacity:0.70;
+		-webkit-transition: all 0.5s;
+		transition: all 0.5s;
+	}
+	.thumbnail:hover{
+		opacity:1.00;
+		box-shadow: 0px 0px 10px #4bc6ff;
+	}
+	.line{
+		margin-bottom: 5px;
+	}
+	@media screen and (max-width: 770px) {
+		.right{
+			float:left;
+			width: 100%;
+		}
+	}
+	span.thumbnail {
+        border: 1px solid #00c4ff !important;
+    border-radius: 0px !important;
+    -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
+    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
+	padding: 10px;
+}
+.container h4{margin-top:70px; margin-bottom:30px;}
+button {    margin-top: 6px;
+}
+.right {
+    float: right;
+    border-bottom: 2px solid #0a5971;
+}
+.btn-info {
+    color: #fff;
+    background-color: #19b4e2;
+    border-color: #19b4e2;
+	font-size:13px;
+	font-weight:600;
+}
+
+/*********end of product index*******/

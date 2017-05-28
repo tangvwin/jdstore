@@ -1,5 +1,7 @@
+<div class="container">
+
 <div class="row">
-  <% @products.each do |product| %>
+  <!-- <% @products.each do |product| %>
     <div class="col-xs-6 col-md-3">
       <%= link_to product_path(product) do %>
         <% if product.image.present? %>
@@ -15,8 +17,61 @@
         ￥ <%= product.price %>
       <% end %>
     </div>
-  <% end %>
+  <% end %> -->
+<% @products.each do |product| %>
+  <div class="col-xs-6 col-md-3">
+      		<span class="thumbnail">
+            <%= link_to product_path(product) do %>
+              <% if product.image.present? %>
+                <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+              <% else %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+              <% end %>
+            <% end %>
+        			<%= product.title %>
+              <br>
+
+
+
+        			<p> </p>
+        			<hr class="line">
+        			<div class="row">
+        				<div class="col-md-6 col-sm-6">
+        					<p class="price"><% if product.discount.present? %>
+                    ￥<%= product.price = product.price * product.discount/100 %>
+                  <% else %>
+                     ￥<%= product.price %>
+                  <% end %></p>
+        				</div>
+        				<div class="col-md-6 col-sm-6">
+                   <%= link_to product_path(product) do %>
+                   <button class="btn btn-info right" > BUY ITEM</button></a>
+                   <% end %>
+        				 <!-- <a href="http://cookingfoodsworld.blogspot.in/" target="_blank" >	<button class="btn btn-info right" > BUY ITEM</button></a> -->
+        				</div>
+
+        			</div>
+      		</span>
+    		</div>
+        <% end %>
+
+
+
+
 </div>
+
+</div>
+
+<!--  分割线   -->
+
+
+
+
+
+
+
+
+
 
 
 <div class="text-center">
