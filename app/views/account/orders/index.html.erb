@@ -1,25 +1,35 @@
-<h2>订单列表</h2>
+<div class="container">
+    <div class="row">
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>生成时间</th>
+        <h2>订单列表</h2>
 
-    </tr>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>生成时间</th>
 
-  </thead>
+                </tr>
 
-  <tbody>
+            </thead>
 
-    <% @orders.each do |order| %>
+            <tbody>
 
-    <tr>
-      <td><%= link_to(order.id, order_path(order.token))%></td>
-      <td><%= order.created_at.to_s(:long) %></td>
-    </tr>
-    <% end %>
+                <% @orders.each do |order| %>
 
-  </tbody>
+                <tr>
+                    <td><%= link_to(order.id, order_path(order.token))%></td>
+                    <td><%= order.created_at.to_s(:long) %></td>
+                </tr>
+                <% end %>
 
-</table>
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+<div class="text-center">
+    <%= will_paginate @orders, renderer: BootstrapPagination::Rails %>
+</div>

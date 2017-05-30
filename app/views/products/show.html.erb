@@ -11,7 +11,7 @@
                     <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
                     <% end %>
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-7 panel-default">
                     <h2><%= @product.title %></h2>
 
                     <h3>
@@ -57,11 +57,14 @@
             <div class="page-header">
                 <h3>Product Details</h3>
             </div>
-            <p><%= @product.description %>
+            <p>
+              <%= @product.description %>
             </p>
           </div>
 
         </div>
+
+
         <div class="container">
           <div class="row">
             <div class="page-header">

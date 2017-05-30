@@ -38,9 +38,12 @@
         			<div class="row">
         				<div class="col-md-6 col-sm-6">
         					<p class="price"><% if product.discount.present? %>
-                    ￥<%= product.price = product.price * product.discount/100 %>
+                    ￥<%= product.price %>
+                    <!-- ￥<%= product.price = product.price * product.discount/100 %> -->
+
+
                   <% else %>
-                     ￥<%= product.price %>
+                     <%= product.price %>
                   <% end %></p>
         				</div>
         				<div class="col-md-6 col-sm-6">
