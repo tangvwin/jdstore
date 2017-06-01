@@ -6,6 +6,10 @@ Rails.application.routes.draw do
    root 'welcome#index'
 
 get 'about' => 'products#about'
+
+get 'camera' => 'products#camera'
+
+
   namespace :admin do
     resources :orders do
       member do

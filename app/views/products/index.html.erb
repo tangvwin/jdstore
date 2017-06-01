@@ -1,3 +1,5 @@
+
+
 <div class="container">
 
 <div class="row">
@@ -31,8 +33,6 @@
         			<%= product.title %>
               <br>
 
-
-
         			<p> </p>
         			<hr class="line">
         			<div class="row">
@@ -40,15 +40,13 @@
         					<p class="price"><% if product.discount.present? %>
                     ￥<%= product.price %>
                     <!-- ￥<%= product.price = product.price * product.discount/100 %> -->
-
-
                   <% else %>
                      <%= product.price %>
                   <% end %></p>
         				</div>
         				<div class="col-md-6 col-sm-6">
                    <%= link_to product_path(product) do %>
-                   <button class="btn btn-info right" > BUY ITEM</button></a>
+                   <button class="btn btn-info right" > 立即购买</button></a>
                    <% end %>
         				 <!-- <a href="http://cookingfoodsworld.blogspot.in/" target="_blank" >	<button class="btn btn-info right" > BUY ITEM</button></a> -->
         				</div>
