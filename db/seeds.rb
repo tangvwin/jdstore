@@ -100,6 +100,21 @@ price: '1188',
 image: open("https://ws4.sinaimg.cn/large/006tNbRwgy1fg4bepo0rdj30ci0ciglx.jpg")
 )
 
+
+Product.create!(title: '小米 10000毫安 移动电源2',
+description: '小米 10000毫安 移动电源2/充电宝 双向快充 锖色 适用于安卓/苹果/手机/平板等',
+quantity: '300',
+price: '79',
+image: open("https://ws3.sinaimg.cn/large/006tKfTcgy1fg98b37uinj30ci0cimxx.jpg")
+)
+
+Product.create!(title: '埃普 AP-4S 懒人手机支架',
+description: '埃普 AP-4S 懒人手机支架 7-10英寸桌面平板支架iPad支架 苹果华为三星铝合金通用手机架',
+quantity: '200',
+price: '49',
+image: open("https://ws4.sinaimg.cn/large/006tKfTcgy1fg98bmenblj30ci0cimxy.jpg")
+)
+
 Product.create!(title: 'Beats Pill+',
 description: 'Beats Pill+ 便携式蓝牙无线音响 黑色 ML4M2CH/A 扬声器音色饱满清晰，通透的音场可渗透房间的的每个角落',
 quantity: '20',
