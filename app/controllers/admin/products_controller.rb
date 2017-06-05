@@ -24,7 +24,7 @@ class Admin::ProductsController < ApplicationController
      if @product.save
           if params[:photos] != nil
        params[:photos]['avatar'].each do |a|
-          @photo = @product.photos.create(:avatar => a) #使用params[:photos][avatar]來存多个图片
+          @photo = @product.photos.create(:avatar => a)
       end
     end
        redirect_to admin_products_path
@@ -41,8 +41,17 @@ class Admin::ProductsController < ApplicationController
    def update
      @product = Product.find(params[:id])
 
-     if @product.update(product_params)
+     if params[:photos] != nil
+       @product.photos.destroy_all
+
+       params[:photos]['avatar'].each do |a|
+         @picture = @product.photos.create(:avatar => a)
+       end
+
+      @product.update(product_params)
        redirect_to admin_products_path
+     elsif @product.update(product_params)
+      redirect_to admin_products_path
      else
        render :edit
      end
@@ -75,7 +84,7 @@ class Admin::ProductsController < ApplicationController
    private
 
    def product_params
-     params.require(:product).permit(:title, :description, :quantity, :price, :discount)
+     params.require(:product).permit(:title, :description, :quantity, :price, :discount, :avatar)
    end
 
  end
