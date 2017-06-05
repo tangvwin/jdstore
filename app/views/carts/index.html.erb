@@ -26,9 +26,9 @@
                         <td class="col-sm-8 col-md-6">
                         <div class="media">
                           <%= link_to product_path(cart_item.product) do %>
-                          <% if cart_item.product.image.present? %>
-                          <%= image_tag(cart_item.product.image.thumb.url, class: "thumbnail") %>
-                          <% else %>
+                              <% if cart_item.product.photos.present? %>
+  	 <%= image_tag(cart_item.product.photos[0].avatar.url(:thumb), class: "thumbnail") %>
+    <% else %>
                           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
                             <% end %>
                           <% end %>

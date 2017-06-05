@@ -14,6 +14,7 @@ class Admin::ProductsController < ApplicationController
 
    def new
      @product = Product.new
+     @photo = @product.photos.build #在内存新建多图对象，build多用于一对多的情况
    end
 
 
@@ -21,6 +22,11 @@ class Admin::ProductsController < ApplicationController
      @product = Product.new(product_params)
 
      if @product.save
+          if params[:photos] != nil
+       params[:photos]['avatar'].each do |a|
+          @photo = @product.photos.create(:avatar => a) #使用params[:photos][avatar]來存多个图片
+      end
+    end
        redirect_to admin_products_path
      else
        render :new
@@ -69,7 +75,7 @@ class Admin::ProductsController < ApplicationController
    private
 
    def product_params
-     params.require(:product).permit(:title, :description, :quantity, :price, :image, :discount)
+     params.require(:product).permit(:title, :description, :quantity, :price, :discount)
    end
 
  end

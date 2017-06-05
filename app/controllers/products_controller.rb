@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
 
    def show
      @product = Product.find(params[:id])
+     @photos = @product.photos.all
    end
 
    def edit
@@ -31,7 +32,16 @@ class ProductsController < ApplicationController
 
    def update
      @product = Product.find(params[:id])
-    if @product.update
+
+       if params[:photos] != nil
+      @product.photos.destroy_all   #先清除原有的图片
+
+      params[:photos]['avatar'].each do |a|
+        @photo = @product.photos.create(:avatar => a)
+      end
+    end
+
+    if @product.update(product_params)
       redirect_to products_path
     else
       render :edit
