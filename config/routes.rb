@@ -24,6 +24,7 @@ get 'camera' => 'products#camera'
       member do
         patch :move_up
         patch :move_down
+
       end
     end
   end
@@ -35,9 +36,12 @@ get 'camera' => 'products#camera'
       get :search
       get :about
 
+
     end
     member do
       post :add_to_cart
+      post :add_to_favorite
+      post :quit_favorite
     end
   end
 

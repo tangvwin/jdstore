@@ -5,6 +5,8 @@ has_many :comments
 has_many :photos
  accepts_nested_attributes_for :photos
 
+has_many :favorites
+has_many :users, through: :favorites, source: :user
 
 acts_as_list
 

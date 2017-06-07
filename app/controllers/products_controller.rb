@@ -1,9 +1,12 @@
 class ProductsController < ApplicationController
 
-  before_action :validate_search_key, only: [:search]
+  before_action :validate_search_key, only: [:search, :favorite]
 
    def index
      @products = Product.all.order("position ASC").paginate(:page => params[:page], :per_page =>8)
+     if params[:favorite] == "yes"
+     @products = current_user.products
+   end
    end
 
    def show
@@ -74,6 +77,31 @@ end
       @product.price = @product.price * (@product.discount / 100 )
     end
   end
+
+  def add_to_favorite
+   @product = Product.find(params[:id])
+   if !current_user.is_favorite_of?(@product)
+     current_user.join!(@product)
+           flash[:notice] = "收藏成功"
+         else
+           flash[:notice] = "您已经收藏过了"
+         end
+
+   redirect_to :back, notice:"成功加入收藏!"
+ end
+
+ def quit_favorite
+   @product = Product.find(params[:id])
+   if current_user.is_favorite_of?(@product)
+          current_user.quit!(@group)
+          flash[:notice] = "成功取消收藏"
+        else
+          flash[:notice] = "你已经取消收藏了"
+        end
+        
+   redirect_to :back, alert: "成功取消收藏!"
+ end
+
 
   def search
     if @query_string.present?
