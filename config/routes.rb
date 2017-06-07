@@ -43,6 +43,7 @@ get 'camera' => 'products#camera'
 
   namespace :account do
     resources :orders
+    resources :users
   end
 
 resources :carts do
