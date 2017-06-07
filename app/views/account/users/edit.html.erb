@@ -6,13 +6,14 @@
         <div>
           <%= f.input :name, :label =>"用户名" %>
           <%= f.input :email, :label =>"邮箱地址" %>
-          <%= link_to("放弃更新", products_path, class: "btn btn-sm btn-info" ) %>
          <%= f.input :profile, as: :file ,label:"头像"%>
          <% if current_user.profile.present?  %>
-            <%= image_tag(current_user.profile.thumb.url,style:"border-radius:50%;width:100px;height:100px;",class:"thumbnail")  %>
+            <%= image_tag(current_user.profile.thumb.url,style:"border-radius:50%;width:200px;height:200px;",class:"thumbnail")  %>
           <% else %>
             <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",class:"thumbnail",style:"width:60px;height:60px;border-radius:50%;") %>
           <% end %>
+          <%= link_to("放弃更新", products_path, class: "btn btn-sm btn-info" ) %>
+
           <%= f.submit "提交", class: "btn btn-sm btn-danger" %>
         </div>
       <% end %>
