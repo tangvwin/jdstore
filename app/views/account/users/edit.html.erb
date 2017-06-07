@@ -2,7 +2,7 @@
   <div class="row">
 <div class=" col-centered">
   <div class="panel panel-info">
-    <div class="panel-heading"><h2 class="text-center">个人资料</h2></div>
+    <div class="panel-heading"><h2 class="text-center">修改个人资料</h2></div>
     <div class="panel-body">
       <%= simple_form_for [:account, @user] do |f| %>
         <div>
@@ -14,7 +14,7 @@
           <% else %>
             <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",class:"thumbnail",style:"width:60px;height:60px;border-radius:50%;") %>
           <% end %>
-          <%= link_to("放弃更新", products_path, class: "btn btn-sm btn-info" ) %>
+          <%= link_to("放弃更新", account_users_path, class: "btn btn-sm btn-info" ) %>
 
           <%= f.submit "提交更新", class: "btn btn-sm btn-danger" %>
         </div>
