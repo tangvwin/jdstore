@@ -45,14 +45,14 @@
                 </li>
 
                 <% if !current_user %>
-                <!-- <li><%= link_to(content_tag(:i,'注册', class: 'fa fa-registered'), new_user_registration_path) %></li>
-      <li><%= link_to(content_tag(:i,'登入', class: 'fa fa-sign-in'), new_user_session_path)%></li> -->
-                <li>
+                <li><%= link_to(content_tag(:i,'注册', class: 'fa fa-registered'), new_user_registration_path) %></li>
+      <li><%= link_to(content_tag(:i,'登入', class: 'fa fa-sign-in'), new_user_session_path)%></li>
+                <!-- <li>
                     <a href="#" data-toggle="modal" data-target="#signup-modal">注册</a>
                 </li>
                 <li>
                     <a href="#" data-toggle="modal" data-target="#login-modal">登入</a>
-                </li>
+                </li> -->
                 <%else%>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -82,7 +82,7 @@
 </nav>
 
 <!-- 以下代码添加在最后 -->
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+<!-- <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog" role="document">
         <div class="loginmodal-container">
             <h2>Log in</h2>
@@ -117,4 +117,4 @@
             <% end %>
         </div>
     </div>
-</div>
+</div> -->
