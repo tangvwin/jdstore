@@ -45,14 +45,14 @@
                 </li>
 
                 <% if !current_user %>
-                <li><%= link_to(content_tag(:i,'注册', class: 'fa fa-registered'), new_user_registration_path) %></li>
-      <li><%= link_to(content_tag(:i,'登入', class: 'fa fa-sign-in'), new_user_session_path)%></li>
-                <!-- <li>
+                <!-- <li><%= link_to(content_tag(:i,'注册', class: 'fa fa-registered'), new_user_registration_path) %></li>
+      <li><%= link_to(content_tag(:i,'登入', class: 'fa fa-sign-in'), new_user_session_path)%></li> -->
+                <li>
                     <a href="#" data-toggle="modal" data-target="#signup-modal">注册</a>
                 </li>
                 <li>
                     <a href="#" data-toggle="modal" data-target="#login-modal">登入</a>
-                </li> -->
+                </li>
                 <%else%>
                 <li>
     <% if current_user.profile.present? %>
@@ -84,6 +84,9 @@
                         <li>
                             <%= link_to("个人资料", account_users_path(current_user)) %>
                         </li>
+                        <li>
+                            <%= link_to("加强版个人资料", edit_user_registration_path(current_user)) %>
+                        </li>
                         <li><%= link_to(content_tag(:i,'登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %></li>
 
                     </ul>
@@ -98,12 +101,22 @@
 </nav>
 
 <!-- 以下代码添加在最后 -->
-<!-- <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog" role="document">
         <div class="loginmodal-container">
             <h2>Log in</h2>
             <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-inputs">
+              <% if current_user.profile.present? %>
+                <%= image_tag(current_user.profile.thumb.url,style:"border-radius:50%;width:50px;height:50px;",class:"thumbnail")  %>
+                <!-- 用户的自选头像 -->
+              <% else %>
+                <%= image_tag("http://ww1.sinaimg.cn/large/006tNbRwgy1ffzxufbo0lj3069069t8o.jpg",class:"thumbnail",style:"width:60px;height:60px;border-radius:50%;") %>
+                 <!-- 定义用户未选择头像时的默认头像 -->
+              <% end %>
+            <%= f.input :profile, as: :file ,label:"头像"%>
+              <%= f.input :name, required: true %>
+              <%= f.input :is_admin, as: :radio_buttons, collection:  [['一般用户', false], ['企业用户', true]], required: true %>
                 <%= f.input :email, required: false, autofocus: true %>
                 <%= f.input :password, required: false %>
                 <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
@@ -133,4 +146,4 @@
             <% end %>
         </div>
     </div>
-</div> -->
+</div>

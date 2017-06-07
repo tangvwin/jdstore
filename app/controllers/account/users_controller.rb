@@ -12,7 +12,7 @@ class Account::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      render :edit
+      redirect_to account_users_path
     else
     render :edit
   end
