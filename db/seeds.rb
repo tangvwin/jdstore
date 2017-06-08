@@ -13,7 +13,7 @@ u.is_admin = true
 u.save
 
 
-puts '建立15个Products'
+puts '建立16个Products'
 Product.create!(title: '华为 HUAWEI P10',
 description: '华为 HUAWEI P10 全网通 4GB+64GB 草木绿 移动联通电信4G手机 双卡双待',
 quantity: '200',
@@ -111,4 +111,10 @@ Product.create!(title: 'Beats Pill+',
 description: 'Beats Pill+ 便携式蓝牙无线音响 黑色 ML4M2CH/A 扬声器音色饱满清晰，通透的音场可渗透房间的的每个角落',
 quantity: '20',
 price: '1888',
+)
+
+Product.create!(title: 'iPhone7 Plus 手机 亮黑色 全网通 128GB',
+description: '苹果 iPhone7 Plus 手机 亮黑色 全网通 128GB',
+quantity: '50',
+price: '6415',
 )
